@@ -525,4 +525,10 @@ main {
 }
 
 
+/* VIRTUAL EVENTS SECTION */
+
+.virtual-events-section {
+    display: flex;
+    justify-content: center;
+}
 
