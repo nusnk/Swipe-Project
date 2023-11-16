@@ -445,7 +445,7 @@ p {
     display: flex;
     justify-content: center;
     position: relative;
-    padding: calc(var(--spacing-xl) * 3);
+    padding: calc(var(--spacing-xl) * 3) 0;
     z-index: 1;
 }
 
@@ -459,6 +459,18 @@ p {
     left: 0;
     z-index: -1;
     transform: skewY(-10deg);
+}
+
+.integrations-section::after {
+    content: "";
+    background-color: red;
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    background-color: var(--bg-light);
 }
 
 .integrations-section .primary-btn {
@@ -502,7 +514,7 @@ p {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: calc(var(--spacing-xl) * 3);
+    padding: calc(var(--spacing-xl) * 3) 0;
 }
 
 .why-swipe-section .card-container{
@@ -772,4 +784,20 @@ p {
 .footer h3 {
     font-size: var(--h6-size);
     font-weight: 700;
+}
+
+@media only screen and (max-width: 1144px) {
+    .section-container {
+        padding: 0 var(--spacing-md);
+    }
+}
+
+/* TABLET SIZE */
+@media only screen and (max-width:768px) {
+
+}
+
+/* MOBILE SIZE */
+@media only screen and (max-width:550px) {
+
 }
