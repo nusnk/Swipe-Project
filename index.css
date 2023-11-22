@@ -1,4 +1,6 @@
+/* VARIABLES */
 :root {
+    /* TEXT STYLES */
     --text-dark: #000;
     --text-light: #fff;
     --text-grey: #adbdcc;
@@ -24,7 +26,7 @@
 
     --btn-size: 16px;
 
-    /* SPACING */
+    /* SPACING VARIABLES*/
     --spacing-sm: 8px;
     --spacing-md: 16px;
     --spacing-lg: 32px;
@@ -32,6 +34,7 @@
 
     --standard-width: 1144px;
 
+    /* COLOR VARIABLES */
     --purple-1: #6962f7;
     --purple-2: #7000ff;
     --blue-1: #00d4ff;
@@ -39,6 +42,8 @@
     --primary-btn-hover-color: #6d7a88;
     --bg-white: #fff;
     --bg-light: #f7f9fc;
+
+    --standard-border-radius: 20px;
 
     --standard-box-shadow: 0px 2px 40px rgba(0, 0, 0, 0.15);
 
@@ -51,10 +56,18 @@
     );
 }
 
+/* GENERAL ELEMENT STYLES */
+
+html,
+body {
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+}
+
 body {
     font-family: var(--body-font);
     color: var(--text-dark);
-    width: 100%;
     margin: 0;
     box-sizing: border-box;
     padding: var(--spacing-sm)  0 0 0;
@@ -216,12 +229,13 @@ p {
     letter-spacing: 0.25px;
 }
 
+/* BUTTON STYLES */
 .primary-btn {
     font-family: var(--body-font);
     font-size: var(--btn-size);
     letter-spacing: 1.25px;
     font-weight: bold;
-    border-radius: 20px;
+    border-radius: var(--standard-border-radius);
     background-color: var(--primary-accent);
     border: none;
     color: var(--text-light);
@@ -240,7 +254,7 @@ p {
     font-size: var(--btn-size);
     letter-spacing: 1.25px;
     font-weight: bold;
-    border-radius: 20px;
+    border-radius: var(--standard-border-radius);
     background-color: transparent;
     border: none;
     color: var(--primary-accent);
@@ -307,7 +321,7 @@ p {
     display: none;
 }
 
-/* ANIMATED GRADIENT */
+/* ANIMATED GRADIENT BACKGROUND*/
 #gradient-canvas {
     /* background-color: purple; */
     width: 200%;
@@ -324,6 +338,16 @@ p {
 }
 
 /* HERO STYLES */
+.hero {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.hero p {
+    max-width: 480px;
+}
+
 .button-container {
     display: flex;
     margin: var(--spacing-md) 0;
@@ -334,16 +358,6 @@ p {
     color: var(--purple-2);
 }
 
-
-.hero {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.hero p {
-    max-width: 480px;
-}
 
 .hero .hero-phone-container {
     height: 564px;
@@ -399,7 +413,7 @@ p {
     background-color: var(--primary-accent);
 }
 
-/* GRAPHIC SECTION */
+/* GRAPHIC GRID SECTION */
 .graphic-section {
     width: 100%;
     display: flex;
@@ -421,24 +435,26 @@ p {
     grid-area: card;
     width: 100%;
     box-shadow: var(--standard-box-shadow);
+    border-radius: var(--standard-border-radius);
 }
 
 #slack-invoice {
     grid-area: slack;
     width: 100%;
     box-shadow: var(--standard-box-shadow);
+    border-radius: var(--standard-border-radius);
 }
 
 #phone {
     grid-area: phone;
     width: 100%;
-    box-shadow: var(--standard-box-shadow);
 }
 
 #dash {
     grid-area: dash;
     width: 100%;
     box-shadow: var(--standard-box-shadow);
+    border-radius: var(--standard-border-radius);
 }
 
 /* INTEGRATIONS SECTION STYLES */
@@ -504,12 +520,12 @@ p {
 #api-code {
     max-width: 470px;
     margin: 0 0 var(--spacing-md) 0;
-    border-radius: 20px;
+    border-radius: var(--standard-border-radius);
 }
 
 #terminal-code {
     max-width: 470px;
-    border-radius: 20px;
+    border-radius: var(--standard-border-radius);
 }
 
 
@@ -631,7 +647,7 @@ p {
     width: 540px;
     height: 446px;
     box-shadow: var(--standard-box-shadow);
-    border-radius: 20px;
+    border-radius: var(--standard-border-radius);
     overflow: hidden;
 }
 
@@ -790,14 +806,15 @@ p {
     font-weight: 700;
 }
 
+/* CUSTOM BREAKPOINT */
 @media only screen and (max-width: 1144px) {
-    .section-container {
-        padding: 0 var(--spacing-md);
-    }
-
     :root {
         --h1-size: 80px; 
         --h1-heigth: 85px;
+    }
+
+    .section-container {
+        padding: 0 var(--spacing-md);
     }
 
     .hero-phone {
@@ -824,6 +841,7 @@ p {
     }
 }
 
+/* CUSTOM BREAKPOINT(850px) */
 @media only screen and (max-width:850px) {
     :root {
         --h1-size: 70px; 
@@ -868,7 +886,7 @@ p {
         width: 50px;
         height: 30px;
         background-color: rgba(250, 250, 250, 0.5);
-        border-radius: 20px;
+        border-radius: var(--standard-border-radius);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -923,6 +941,10 @@ p {
     }
 
     /* WHY SWIPE SECTION */
+    .why-swipe-section {
+        padding:var(--spacing-md) 0 var(--spacing-xl) 0;
+    }
+
     .why-swipe-section .card-container {
         flex-wrap: wrap;
     }
@@ -959,6 +981,7 @@ p {
 
 /* MOBILE SIZE */
 @media only screen and (max-width:550px) {
+    /* GENERAL STYLES */
     :root {
         --h1-size: 58px;
         --h1-height: 65px;
@@ -997,17 +1020,33 @@ p {
         display: none;
     }
 
-
+    /* PARTNERS GRID SECTION */
     .partners-grid {
         grid-template-columns: 1fr 1fr;
     }
 
+    /* UNIFIED PLATFORM SECTION */
+    .unified-platform-section {
+        padding: var(--spacing-md) 0;
+    }
+
      /* INTEGRATION SECTION */
+    .integrations-section {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .integrations-section::before {
+        height: 900px;
+    }
+
     .integrations-section .col-right {
         display: none;
     }
 
     /* WHY SWIPE SECTION */
+    .why-swipe-section {
+        padding: var(--spacing-xl) 0 var(--spacing-md) 0;
+    }
     .why-swipe-section .card-container .card {
         width: 100%;
         margin: var(--spacing-sm) 0;
@@ -1017,7 +1056,15 @@ p {
         height: 35px;
     }
 
-    /* GLOBAL SCALE SECTION */
+    /* GLOBAL SECTION */
+    .global-section {
+        padding: var(--spacing-xl) 0 0 0;
+    }
+
+    .global-section .card-container {
+        margin: var(--spacing-md) 0;
+    }
+
     .global-section .card-container .card {
         width: 100%;
         margin: var(--spacing-sm) 0;
@@ -1028,6 +1075,9 @@ p {
     }
 
     /* VIRTUAL EVENTS SECTION */
+    .virtual-events-section {
+        padding: 0;
+    }
     .virtual-events-section .swipe-sessions-card {
         margin: var(--spacing-lg) 0;
         width: 100%;
@@ -1045,6 +1095,13 @@ p {
         width: 300px;
     }
 
+    /* GETTING STARTED SECTION */
+    .getting-started-section {
+        padding: var(--spacing-md) 0;
+    }
+
+
+    /* FOOTER SECTION */
     .footer .section-container {
         flex-wrap: wrap;
     }
@@ -1065,11 +1122,4 @@ p {
     .footer .icon-link img{
         width: 18px;
     }
-}
-
-html,
-body {
-    width: 100%;
-    position: relative;
-    overflow-x: hidden;
 }
